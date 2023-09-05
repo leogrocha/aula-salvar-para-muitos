@@ -1,5 +1,7 @@
 package com.devsuperior.aula.entities;
 
+import com.devsuperior.aula.dto.CategoryDTO;
+import com.devsuperior.aula.dto.ProductDTO;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -56,5 +58,15 @@ public class Product {
 
     public Set<Category> getCategories() {
         return categories;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", categories=" + categories +
+                '}';
     }
 }

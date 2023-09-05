@@ -1,5 +1,6 @@
 package com.devsuperior.aula.entities;
 
+import com.devsuperior.aula.dto.CategoryDTO;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -25,6 +26,11 @@ public class Category {
         this.name = name;
     }
 
+    public Category(CategoryDTO categoryDTO) {
+        id = categoryDTO.getId();
+        name = categoryDTO.getName();
+    }
+
     public Long getId() {
         return id;
     }
@@ -43,5 +49,13 @@ public class Category {
 
     public Set<Product> getProducts() {
         return products;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
